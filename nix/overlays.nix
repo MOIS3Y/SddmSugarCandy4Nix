@@ -1,5 +1,5 @@
 {}: {
-  SddmSugarCandy4Nix = final: prev: {
-    SddmSugarCandy4Nix = final.libsForQt5.callPackage ./default.nix { };
+  sddm-sugar-candy  = final: prev: {
+    sddm-sugar-candy = final.libsForQt5.callPackage ./default.nix { };
   };
 }

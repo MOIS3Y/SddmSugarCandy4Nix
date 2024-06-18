@@ -17,15 +17,15 @@
     pkgsFor = genSystems (system:
       import nixpkgs {
         inherit system;
-        overlays = [ self.overlays.SddmSugarCandy4Nix ];
+        overlays = [ self.overlays.sddm-sugar-candy ];
       }
     );
   in {
     packages = genSystems (system:
       (self.overlays.default pkgsFor.${system} pkgsFor.${system})
-      // { default = self.packages.${system}.SddmSugarCandy4Nix; }
+      // { default = self.packages.${system}.sddm-sugar-candy; }
     );
     overlays = (import ./nix/overlays.nix { })
-    // { default = self.overlays.SddmSugarCandy4Nix; };
+    // { default = self.overlays.sddm-sugar-candy ; };
   };
 }

@@ -84,7 +84,7 @@
     '';
   };
 in stdenv.mkDerivation {
-  pname = "SddmSugarCandy4Nix";
+  pname = "sddm-sugar-candy";
   version = "1.6";
   dontWrapQtApps = true;
   userConfig = cfgFile;
