@@ -1,6 +1,6 @@
 # sddmSugarCandy4Nix
 
-![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_catppuccin_nixos.png)
+![image info](.github/sddm_laptop_catppuccin_nixos.png)
 
 This repository is a wrapper of the fork of the Sugar Candy login theme for SDDM made by Marian Arlt available [here](https://framagit.org/MarianArlt/sddm-sugar-candy/-/tree/master).
 
@@ -12,9 +12,7 @@ The author's last commit dates back to 2020, but sugar-candy still works great.
 
 
 ## Table of content
-
-- [sddmSugarCandy4Nix](#sddmsugarcandy4nix)
-  - [Table of content](#table-of-content)
+<!-- no toc -->
 - [Goal](#goal)
   - [How it works?](#how-it-works)
 - [Installation](#installation)
@@ -24,6 +22,7 @@ The author's last commit dates back to 2020, but sugar-candy still works great.
     - [Fourth step](#fourth-step)
 - [Configuration](#configuration)
 - [Examples](#examples)
+- [Changelog](#changelog)
 
 
 # Goal
@@ -66,18 +65,18 @@ You can add this flake as inputs in `flake.nix` in the repository
 containing your NixOS configuration:
 
 ```nix
-inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  # ...
-    sddmSugarCandy4Nix = {
-      url = "github:MOIS3Y/sddmSugarCandy4Nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  # ...
-}
+  inputs = {
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # ...
+      sddmSugarCandy4Nix = {
+        url = "github:MOIS3Y/sddmSugarCandy4Nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    # ...
+  };
 ```
 
-This flake provides an overlay for Nixpkgs, with package and a NixOS module.
+This flake provides an overlay for Nixpkgs, with package.
 
 They are respectively found in the flake as
 
@@ -85,6 +84,7 @@ They are respectively found in the flake as
 - `inputs.sddmSugarCandy4Nix.overlays.sddm-suger-candy`
 - `inputs.ssddmSugarCandy4Nix.packages.${system}.default`
 - `inputs.ssddmSugarCandy4Nix.packages.${system}.sddm-suger-candy`
+
 (Where `${system}` is either `x86_64-linux` or `aarch64-linux`)
 
 
@@ -255,6 +255,9 @@ Somewhere in your `configuration.nix`
 
 |  |  |  |  |
 |-----------|--------------|--------------|--------------|
-| ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_catppuccin_nixos.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/login_screen_catppuccin_nixos.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_catppuccin_misc.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/login_screen_catppuccin_misc.png) |
-| ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_yoru_nixos.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/login_screen_yoru_nixos.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_yoru_misc.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/login_screen_yoru_misc.png) |
-| ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_everblush_nixos.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/login_screen_everblush_nixos.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/sddm_laptop_everblush_misc.png) | ![image info](https://github.com/MOIS3Y/sddmSugarCandy4Nix/blob/main/.github/login_screen_everblush_misc.png) |
+| ![image info](.github/sddm_laptop_catppuccin_nixos.png) | ![image info](.github/login_screen_catppuccin_nixos.png) | ![image info](.github/sddm_laptop_catppuccin_misc.png) | ![image info](.github/login_screen_catppuccin_misc.png) |
+| ![image info](.github/sddm_laptop_yoru_nixos.png) | ![image info](.github/login_screen_yoru_nixos.png) | ![image info](.github/sddm_laptop_yoru_misc.png) | ![image info](.github/login_screen_yoru_misc.png) |
+| ![image info](.github/sddm_laptop_everblush_nixos.png) | ![image info](.github/login_screen_everblush_nixos.png) | ![image info](.github/sddm_laptop_everblush_misc.png) | ![image info](.github/login_screen_everblush_misc.png) |
+
+
+# [Changelog](CHANGELOG.md)
